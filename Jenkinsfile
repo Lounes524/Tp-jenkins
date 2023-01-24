@@ -41,6 +41,21 @@ pipeline {
                 }
             }
     }
+    
+            stage('Build')
+    {
+            steps 
+                {
+                  bat './gradlew build'
+                }
+            }
+            post {
+          success {
+            bat './gradlew javadoc'
+            archiveArtifacts artifacts:  'build/libs/*,  build/docs/**/*'
+          }
+        }
+    }
 }
 
 }

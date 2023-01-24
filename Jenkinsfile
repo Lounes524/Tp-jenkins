@@ -16,7 +16,7 @@ pipeline {
                 classifications: [
                     [
                         'key': 'Browser',
-                        'value': 'Chrome'
+                        'value': 'Brave'
                     ]
                 ]
          
@@ -25,7 +25,12 @@ pipeline {
     }
     stage('Code Analysis')
     {
-      
+      steps{
+      withSonarQubeEnv() 
+          { 
+            bat './gradlew sonarqube'
+          }
+        }
     }
     
 }

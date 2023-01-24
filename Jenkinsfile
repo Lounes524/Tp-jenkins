@@ -1,7 +1,8 @@
 pipeline {
   agent any
   stages {
-    stage('Test'){
+    stage('Test')
+    {
       steps{
         bat './gradlew test'
       }
@@ -15,12 +16,16 @@ pipeline {
                 classifications: [
                     [
                         'key': 'Browser',
-                        'value': 'Chrome'
+                        'value': 'Brave'
                     ]
                 ]
          
         }
       }
+    }
+    stage('Code Analysis')
+    {
+      
     }
     
 }

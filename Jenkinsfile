@@ -42,13 +42,12 @@ pipeline {
             }
     }
     
-            stage('Build')
+        stage('Build')
     {
             steps 
                 {
                   bat './gradlew build'
                 }
-            }
             post {
           success {
             bat './gradlew javadoc'

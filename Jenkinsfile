@@ -68,6 +68,7 @@ pipeline {
   {
     success
     {
+      
         notifyEvents message: 'Build success', token: 'amnVXwSJY06y0YL0LtC4eiS7vO-mKHiJ'
     }
   }

@@ -33,6 +33,13 @@ pipeline {
         }
     }
     
+        stage('Code Quality')
+    {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                waitForQualityGate abortPipeline: true
+                }
+    
 }
 
 }

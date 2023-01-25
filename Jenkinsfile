@@ -70,5 +70,9 @@ pipeline {
     {
         notifyEvents message: 'Build success', token: 'amnVXwSJY06y0YL0LtC4eiS7vO-mKHiJ'
     }
+    failure
+    {
+            emailext body: 'Failed build', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Failed build'
+     }
   }
 }

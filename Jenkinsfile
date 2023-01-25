@@ -74,7 +74,7 @@ pipeline {
     }
     failure
     {
-        mail(subject: 'Failed build', body: 'failed build', cc: 'amaramoumouh14@gmail.com' ,bcc:'amaramoumouh14@gmail.com')
+        mail bcc: '', body: 'Failed build', cc: '', from: '', replyTo: '', subject: 'Build failed', to: 'jl_amara@esi.dz'
      }
   }
 }

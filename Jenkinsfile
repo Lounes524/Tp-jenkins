@@ -74,7 +74,9 @@ pipeline {
     }
     failure
     {
-            emailext body: 'Failed build', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Failed build'
+      emailext body: 'Failed build',
+    subject: 'Failed build',
+    to: 'jl_amara@esi.dz'
      }
   }
 }

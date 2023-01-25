@@ -5,6 +5,7 @@ pipeline {
     {
       steps{
         bat './gradlew test'
+        sqdqsdsqd
       }
       post {
         always{

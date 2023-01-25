@@ -74,9 +74,7 @@ pipeline {
     }
     failure
     {
-      emailext body: 'Failed build',
-    subject: 'Failed build',
-    to: 'amaramoumouh14@gmail.com'
+        mail(subject: 'Failed build', body: 'failed build', cc: 'amaramoumouh14@gmail.com' ,bcc:'amaramoumouh14@gmail.com')
      }
   }
 }

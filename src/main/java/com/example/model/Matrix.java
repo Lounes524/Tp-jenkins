@@ -5,34 +5,27 @@ public class Matrix {
 	private int nrows;
 	private int ncols;
 	private double[][] data;
-
 	public Matrix() {
 	}
-
 	public double[][] getData() {
 		return data;
 	}
-
 	public void setData(double[][] data) {
 		this.data = data;
 		this.nrows = data.length;
 		this.ncols = data[0].length;
 	}
-
 	public Matrix(int nrow, int ncol) {
 		this.nrows = nrow;
 		this.ncols = ncol;
 		data = new double[nrow][ncol];
 	}
-
 	public int getNrows() {
 		return nrows;
 	}
-
 	public void setNrows(int nrows) {
 		this.nrows = nrows;
 	}
-
 	public int getNcols() {
 		return ncols;
 	}

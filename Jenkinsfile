@@ -5,6 +5,7 @@ pipeline {
     {
       steps{
         bat './gradlew test'
+        error("failing the pipeline")
       }
       post {
         always{
@@ -69,12 +70,11 @@ pipeline {
     success
     {
         notifyEvents message: 'Build success', token: 'amnVXwSJY06y0YL0LtC4eiS7vO-mKHiJ'
-      emailext body: 'Success build', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Failed build'
-      mail bcc: '', body: 'Failed build1', cc: '', from: '', replyTo: '', subject: 'Build failed', to: 'jl_amara@esi.dz'
+        mail body: 'Build succeded', subject: 'Build succeded', to: 'jl_amara@esi.dz'
     }
     failure
     {
-        mail bcc: '', body: 'Failed build', cc: '', from: '', replyTo: '', subject: 'Build failed', to: 'jl_amara@esi.dz'
+        mail body: 'Failed build', subject: 'Build failed', to: 'jl_amara@esi.dz'
      }
   }
 }

@@ -6,7 +6,6 @@ pipeline {
       steps{
         bat './gradlew test'
         //error("failing the pipeline")
-        
       }
       post {
         always{
